@@ -69,9 +69,6 @@ export default function LandingPage() {
           Jeden Tag die gleichen Diskussionen, Ansagen und Erinnerungen.
         </p>
 
-        <p className="text-[15px] italic mt-5" style={{ color: "var(--text-soft)" }}>
-          Wenn du dich wiederfindest – lies weiter.
-        </p>
       </section>
 
       {/* DIE INFORMATIONS-LAWINE */}
@@ -150,7 +147,7 @@ export default function LandingPage() {
         <P>
           Es gibt Zusammenarbeit, die funktioniert. Und es gibt Zusammenarbeit,
           bei der man merkt: Hier stimmt alles – Haltung, Kompetenz, Spaß an
-          und bei der Arbeit. Danke dafür.
+          und bei der Arbeit.
         </P>
       </Section>
 

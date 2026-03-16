@@ -92,13 +92,13 @@ export default function Datenschutz() {
           {/* KI & Sprachverarbeitung */}
           <section>
             <h2 className="text-[18px] font-semibold mb-2" style={{ color: "var(--text)" }}>
-              6. KI-Verarbeitung – Langdock
+              6. Onboarding – Langdock
             </h2>
             <p>
-              Für die KI-gestützte Verarbeitung eurer Eingaben (Texte, Fotos
-              von Ranzenpost etc.) nutzen wir Langdock als LLM-Plattform.
-              Langdock verarbeitet eure Eingaben, um Momos Antworten zu
-              generieren. Langdock ist ein deutscher Anbieter mit Sitz in
+              Für das Onboarding neuer Familien nutzen wir Langdock. Dabei
+              werden Eingaben zu Familienmitgliedern, Aufgaben und
+              Tagesabläufen verarbeitet, um Momo für eure Familie
+              einzurichten. Langdock ist ein deutscher Anbieter mit Sitz in
               Hamburg. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO.
             </p>
           </section>
@@ -120,17 +120,18 @@ export default function Datenschutz() {
           {/* ChatGPT */}
           <section>
             <h2 className="text-[18px] font-semibold mb-2" style={{ color: "var(--text)" }}>
-              8. Datenverarbeitung – OpenAI (ChatGPT)
+              8. KI-Verarbeitung – OpenAI (ChatGPT)
             </h2>
             <p>
-              Für die Verarbeitung und Aufbereitung von Airtable-Daten sowie
-              deren Übertragung an LiveKit nutzt Momo die API von OpenAI
-              (ChatGPT). Dabei können Inhalte wie Termine, Aufgaben und
-              Familiendaten an OpenAI-Server übermittelt werden, um sie für
-              Momos Antworten aufzubereiten. Anbieter ist OpenAI, L.L.C., USA.
-              Die Verarbeitung erfolgt über die API ohne dauerhaftes Training
-              auf euren Daten. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO
-              (Vertragserfüllung).
+              Für die KI-gestützte Verarbeitung eurer Daten nutzt Momo die
+              API von OpenAI (ChatGPT). Dazu gehören die Interpretation von
+              Texten und Fotos (z.B. Ranzenpost), die Aufbereitung von
+              Airtable-Daten sowie deren Übertragung an LiveKit für Momos
+              Antworten. Dabei können Inhalte wie Termine, Aufgaben und
+              Familiendaten an OpenAI-Server übermittelt werden. Anbieter ist
+              OpenAI, L.L.C., USA. Die Verarbeitung erfolgt über die API ohne
+              dauerhaftes Training auf euren Daten. Rechtsgrundlage ist
+              Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung).
             </p>
           </section>
 
