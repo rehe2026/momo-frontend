@@ -40,6 +40,9 @@ const tagColors: Record<string, string> = {
 export default function LandingPage() {
   return (
     <main>
+      {/* Floating Audio Player – always visible */}
+      <AudioPlayer />
+
       {/* NAV */}
       <nav className="flex items-center justify-between px-6 py-4 max-w-[900px] mx-auto">
         <span
@@ -50,7 +53,7 @@ export default function LandingPage() {
         </span>
       </nav>
 
-      {/* OPENER + SONG */}
+      {/* OPENER */}
       <section className="pt-[72px] pb-10 px-6 text-center">
         <h1
           className="text-[36px] leading-[1.2] font-bold mb-3 max-sm:text-[28px]"
@@ -65,24 +68,27 @@ export default function LandingPage() {
           Jeden Tag die gleichen Diskussionen, Ansagen und Erinnerungen.
         </p>
 
-        {/* Song Card */}
+        {/* Dezenter Song-Hinweis */}
         <div
-          className="rounded-[18px] p-7 max-w-[400px] mx-auto mb-4 text-center"
-          style={{ background: "linear-gradient(135deg, var(--coral), var(--purple))" }}
+          className="inline-flex items-center gap-3 rounded-full px-5 py-2.5 mx-auto"
+          style={{
+            background: "linear-gradient(135deg, var(--coral-light), var(--purple-light))",
+            border: "1px solid var(--coral-soft)",
+          }}
         >
-          <p className="text-[13px] uppercase tracking-wide font-medium mb-1.5 text-white/75">
-            Der Eltern Song
-          </p>
-          <p
-            className="text-[22px] font-semibold text-white mb-4"
-            style={{ fontFamily: "'Playfair Display', serif" }}
-          >
-            Hör mal rein
-          </p>
-          <AudioPlayer />
+          <span
+            className="w-2 h-2 rounded-full animate-pulse"
+            style={{ background: "var(--coral)" }}
+          />
+          <span className="text-[14px] font-medium" style={{ color: "var(--text-mid)" }}>
+            Hör mal rein: <span style={{ color: "var(--coral)" }}>Der Eltern Song</span>
+          </span>
+          <span className="text-[12px]" style={{ color: "var(--text-soft)" }}>
+            ↗ Play-Button rechts unten
+          </span>
         </div>
 
-        <p className="text-[15px] italic mt-5" style={{ color: "var(--text-soft)" }}>
+        <p className="text-[15px] italic mt-8" style={{ color: "var(--text-soft)" }}>
           Wenn du dich wiederfindest – lies weiter.
         </p>
       </section>
