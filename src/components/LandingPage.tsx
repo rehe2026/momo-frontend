@@ -1,7 +1,10 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import AudioPlayer from "@/components/AudioPlayer";
 import Link from "next/link";
+
+const PASS = "Ranzenpost";
 
 const infoChannels = [
   { label: "Spond", color: "coral" },
@@ -39,6 +42,72 @@ const tagColors: Record<string, string> = {
 };
 
 export default function LandingPage() {
+  const [unlocked, setUnlocked] = useState(false);
+  const [input, setInput] = useState("");
+  const [error, setError] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && sessionStorage.getItem("momo_unlocked") === "true") {
+      setUnlocked(true);
+    }
+  }, []);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (input === PASS) {
+      setUnlocked(true);
+      sessionStorage.setItem("momo_unlocked", "true");
+    } else {
+      setError(true);
+      setTimeout(() => setError(false), 2000);
+    }
+  };
+
+  if (!unlocked) {
+    return (
+      <main className="min-h-screen flex items-center justify-center px-6">
+        <div className="text-center max-w-[380px] w-full">
+          <span
+            className="text-[36px] font-bold block mb-2"
+            style={{ fontFamily: "'Playfair Display', serif", color: "var(--coral)" }}
+          >
+            Momo
+          </span>
+          <p className="text-[15px] mb-8" style={{ color: "var(--text-mid)" }}>
+            Diese Seite ist nur für eingeladene Familien.
+          </p>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Passwort eingeben"
+              autoFocus
+              className="w-full px-4 py-3 border rounded-[12px] text-[16px] text-center bg-white outline-none transition-colors mb-3"
+              style={{
+                borderColor: error ? "var(--coral)" : "#d4ccc4",
+              }}
+            />
+            {error && (
+              <p className="text-[13px] mb-3" style={{ color: "var(--coral)" }}>
+                Falsches Passwort – versuch es nochmal.
+              </p>
+            )}
+            <button
+              type="submit"
+              className="w-full py-3 rounded-[12px] text-[15px] font-semibold text-white cursor-pointer transition-colors"
+              style={{ background: "var(--coral)" }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = "var(--coral-dark)")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "var(--coral)")}
+            >
+              Weiter
+            </button>
+          </form>
+        </div>
+      </main>
+    );
+  }
+
   return (
     <main>
       {/* Floating Audio Player – always visible */}
