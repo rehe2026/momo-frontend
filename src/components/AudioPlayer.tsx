@@ -50,12 +50,12 @@ export default function AudioPlayer() {
             color: "white",
           }}
         >
-          {isPlaying ? "Pause" : "Eltern Song"}
+          {isPlaying ? "Pause" : "Hör mal rein"}
         </span>
 
         <button
           onClick={toggle}
-          aria-label={isPlaying ? "Pause" : "Eltern Song abspielen"}
+          aria-label={isPlaying ? "Pause" : "Hör mal rein"}
           className="relative flex items-center justify-center transition-transform duration-200 hover:scale-110 active:scale-95"
           style={{
             width: 56,

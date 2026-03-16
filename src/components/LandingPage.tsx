@@ -1,6 +1,7 @@
 "use client";
 
 import AudioPlayer from "@/components/AudioPlayer";
+import Link from "next/link";
 
 const infoChannels = [
   { label: "Spond", color: "coral" },
@@ -68,27 +69,7 @@ export default function LandingPage() {
           Jeden Tag die gleichen Diskussionen, Ansagen und Erinnerungen.
         </p>
 
-        {/* Dezenter Song-Hinweis */}
-        <div
-          className="inline-flex items-center gap-3 rounded-full px-5 py-2.5 mx-auto"
-          style={{
-            background: "linear-gradient(135deg, var(--coral-light), var(--purple-light))",
-            border: "1px solid var(--coral-soft)",
-          }}
-        >
-          <span
-            className="w-2 h-2 rounded-full animate-pulse"
-            style={{ background: "var(--coral)" }}
-          />
-          <span className="text-[14px] font-medium" style={{ color: "var(--text-mid)" }}>
-            Hör mal rein: <span style={{ color: "var(--coral)" }}>Der Eltern Song</span>
-          </span>
-          <span className="text-[12px]" style={{ color: "var(--text-soft)" }}>
-            ↗ Play-Button rechts unten
-          </span>
-        </div>
-
-        <p className="text-[15px] italic mt-8" style={{ color: "var(--text-soft)" }}>
+        <p className="text-[15px] italic mt-5" style={{ color: "var(--text-soft)" }}>
           Wenn du dich wiederfindest – lies weiter.
         </p>
       </section>
@@ -160,7 +141,7 @@ export default function LandingPage() {
         </P>
         <P>
           Erst habe ich improvisiert – mit Tools, Tabellen, allem was ging. Dann
-          habe ich Sonja, Stefan und Kai von Syndicats kennengelernt. Drei
+          habe ich Sonja, Stefan und Kai kennengelernt. Drei
           Entwickler, die als Eltern selber in diesem System leben und sofort
           verstanden haben, worum es geht. Gemeinsam haben wir Momo in den
           letzten Monaten von einer Idee in ein lebendiges System verwandelt.
@@ -168,8 +149,8 @@ export default function LandingPage() {
         </P>
         <P>
           Es gibt Zusammenarbeit, die funktioniert. Und es gibt Zusammenarbeit,
-          bei der man merkt: Hier stimmt alles – die Haltung, die Kompetenz, der
-          Spaß an und bei der Arbeit. Genau so fühlt sich das an.
+          bei der man merkt: Hier stimmt alles – Haltung, Kompetenz, Spaß an
+          und bei der Arbeit. Danke dafür.
         </P>
       </Section>
 
@@ -447,9 +428,17 @@ export default function LandingPage() {
         className="text-center py-8 px-6 mt-10"
         style={{ borderTop: "1px solid var(--coral-soft)" }}
       >
-        <p className="text-[13px]" style={{ color: "var(--text-faint)" }}>
-          © 2026 Momo · Von Rebecca, Sonja, Stefan & Kai – mit Herz gebaut.
-        </p>
+        <div className="flex items-center justify-center gap-4 text-[13px]" style={{ color: "var(--text-faint)" }}>
+          <span>© 2026 Momo</span>
+          <span>·</span>
+          <Link href="/impressum" className="underline hover:no-underline" style={{ color: "var(--text-faint)" }}>
+            Impressum
+          </Link>
+          <span>·</span>
+          <Link href="/datenschutz" className="underline hover:no-underline" style={{ color: "var(--text-faint)" }}>
+            Datenschutz
+          </Link>
+        </div>
       </footer>
     </main>
   );
