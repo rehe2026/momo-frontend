@@ -121,6 +121,7 @@ export default function LandingPage() {
         >
           Momo
         </span>
+        <Link href="/onboarding" className="text-[15px] font-semibold px-5 py-2 rounded-[10px] text-white transition-colors" style={{ background: "var(--teal)" }}>Zum Onboarding</Link>
       </nav>
 
       {/* OPENER */}
